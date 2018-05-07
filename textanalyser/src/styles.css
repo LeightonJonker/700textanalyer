@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*Body: Roberto
+
+
+
+
+*/
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: gray;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/*a{*/
+  /*text-decoration: none;*/
+  /*font-size: 18px;*/
+  /*line-height: 22px;*/
+  /*color: black;*/
+  /*cursor: pointer;*/
+/*}*/
+/*a:hover{*/
+  /*color: firebrick;*/
+/*}*/
+
+/*a,*/
+/*a:hover{*/
+  /*-webkit-transition: all .4s ease-in-out;*/
+  /*-moz-transition: all .4s ease-in-out;*/
+  /*transition: all .4s ease-in-out;*/
+/*}*/
+
+h2{
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: crimson;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#container{
+  width: 100%;
+  max-width: 1345px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+
+
+@media only screen and (max-width: 1345px){
+  #container{
+    width: auto;
+    margin: 0 3%;
+  }
+
+}

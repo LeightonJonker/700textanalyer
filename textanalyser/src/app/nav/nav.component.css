@@ -1,0 +1,58 @@
+a{
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 22px;
+  color: black;
+  cursor: pointer;
+}
+a:hover{
+  color: firebrick;
+}
+
+a,
+a:hover{
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+
+nav{
+  display: inline;
+  width: 100%;
+  font-size: 0;
+  line-height: 0;
+  margin: 0 ;
+  padding: 0;
+  background: black;
+  color: white;
+}
+
+nav,
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav ul li{
+  display: inline;
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+nav ul li a{
+  display: block;
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+nav ul li a:hover{
+  background: white;
+  color: firebrick;
+}

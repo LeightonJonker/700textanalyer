@@ -3,13 +3,20 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { NewCmpComponent } from './new-cmp/new-cmp.component';
+import { HeaderComponent } from './header/header.component';
+import { NavComponent } from './nav/nav.component';
+import { BodyComponent } from './body/body.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
+    HeaderComponent,
     AppComponent,
-    NewCmpComponent
+    NavComponent,
+    BodyComponent,
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule
