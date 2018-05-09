@@ -11,7 +11,7 @@ body{
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   line-height: 22px;
-  color: gray;
+  color: black;
   max-width: 1920px;
   margin: 0 auto;
   padding: 0;
@@ -50,6 +50,7 @@ h2{
   max-width: 1345px;
   margin: 0 auto;
   padding: 0;
+  color: black;
 }
 
 
