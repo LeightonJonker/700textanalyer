@@ -9,6 +9,8 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     FooterComponent,
     AboutComponent,
     MyprofileComponent,
+    LoginComponent,
+    SignupComponent,
 
   ],
   imports: [
@@ -31,6 +35,12 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
             {
               path: 'myprofile',
               component: MyprofileComponent},
+            {
+              path: 'login',
+              component: LoginComponent},
+            {
+              path: 'signup',
+              component: SignupComponent},
             { path: '',
               component:BodyComponent}
           ])
