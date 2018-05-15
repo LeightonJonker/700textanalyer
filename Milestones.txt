@@ -1,0 +1,10 @@
+Milestones: PicText / PicTex : Visualising Short Text
+
+1st June: mock-up on front-end
+Research for keyword finding / text analysis (looking at implementations)
+shortening words, synonyms, word dictionaries 
+
+17/21st of june -> 16th july:
+Keyword Algorithm
+Flickr API implementation
+Combining aqnd putting it in the back-end
