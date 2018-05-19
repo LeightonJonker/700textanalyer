@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ResultComponent } from './result/result.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SignupComponent } from './signup/signup.component';
     MyprofileComponent,
     LoginComponent,
     SignupComponent,
+    ResultComponent,
 
   ],
   imports: [
@@ -38,6 +40,9 @@ import { SignupComponent } from './signup/signup.component';
             {
               path: 'login',
               component: LoginComponent},
+            {
+              path: 'result',
+              component: ResultComponent},
             {
               path: 'signup',
               component: SignupComponent},
