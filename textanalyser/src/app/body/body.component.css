@@ -1,5 +1,6 @@
 h1 {
   font-family: Roboto;
+  text-align: center;
   font-size: 30px;
   line-height: 1px;
   color: crimson;
@@ -22,6 +23,7 @@ div{
 
 .wrapper{
   text-align: center;
+  vertical-align: top;
 }
 
 .button{
@@ -47,6 +49,19 @@ div{
 }
 
 input{
+  margin-left: 30%;
+  margin-top:  80px;
+  display: inline;
+  box-sizing: border-box;
+  background-color: white;
+  width: 500px;
+  height: 200px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+textarea{
+  placeholder: "hi";
+  resize: none;
   margin-left: 30%;
   margin-top:  80px;
   display: inline;
