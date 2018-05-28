@@ -1,0 +1,110 @@
+h1 {
+  font-family: Roboto;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1px;
+  color: crimson;
+}
+
+img{
+  display: block;
+  width:250px;
+  height:334px;
+  margin-top: 1px;
+  margin-left: 90px;
+}
+
+
+div{
+  display: inline;
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 1px;
+  color: black;
+}
+
+#container.main{
+  display: block;
+  width: 100%;
+  margin: 35px 0;
+  padding: 0 10px;
+}
+
+.wrapper{
+  display: flex;
+  text-align: center;
+  vertical-align: top;
+}
+
+.button{
+  cursor: pointer;
+  margin-left: 800px;
+  margin-top: 10px;
+  background-color: firebrick;
+  border: none;
+  color: white;
+  padding: 13px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.button2{
+  cursor: pointer;
+  background-image: url("https://i.imgur.com/YDajhhh.png");
+  background-repeat: no-repeat;
+  background-size: 250px;
+  display: block;
+  width:250px;
+  height:250px;
+  margin-top: 50px;
+  margin-left: 90px;
+}
+
+.button3{
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 251px;
+  background-image: url("https://i.imgur.com/wKjdA9G.png");
+  display: block;
+  width:250px;
+  height:334px;
+  margin-top: 1px;
+  margin-left: 90px;
+}
+
+.button:hover{
+  background-color: white;
+  color: firebrick;
+}
+
+input{
+  margin-left: 30%;
+  margin-top:  60px;
+  display: inline;
+  box-sizing: border-box;
+  background-color: white;
+  width: 500px;
+  height: 200px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+textarea{
+  placeholder: "hi";
+  resize: none;
+  margin-left: 5%;
+  margin-top:  80px;
+  display: inline;
+  box-sizing: border-box;
+  background-color: white;
+  width: 500px;
+  height: 200px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
