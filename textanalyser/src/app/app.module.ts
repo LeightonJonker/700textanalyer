@@ -13,7 +13,6 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ResultComponent } from './result/result.component';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -26,7 +25,6 @@ import { ResultComponent } from './result/result.component';
     LoginComponent,
     SignupComponent,
     ResultComponent,
-
   ],
   imports: [
     BrowserModule,

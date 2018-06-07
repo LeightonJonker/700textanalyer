@@ -1,22 +1,25 @@
+<!DOCTYPE html>
+<html>
 <section class = "main">
   <h1> Welcome to PicTex! </h1>
 
-
   <div class = "content">
-
    </div>
-
-
 </section>
+
+
 
 <div class="wrapper">
 <!--<input type="input" name="textarea">-->
-  <textarea placeholder="Input your text here...">
+  <textarea (ngModel)="role" id = "thetextarea" placeholder="Input your text here...">
 </textarea>
   <br>
   <br>
+<button routerLink="/result" (click)="afunction()" class="button">Submit</button>
+  <p id="demo"></p>
 
-<button routerLink="/result" class="button">Submit</button>
 </div>
 <br>
 <br>
+
+</html>

@@ -6,6 +6,10 @@ h1 {
   color: crimson;
 }
 
+p {
+  color: black;
+}
+
 div{
   display: inline;
   font-family: Roboto;

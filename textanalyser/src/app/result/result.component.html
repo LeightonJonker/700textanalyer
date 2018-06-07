@@ -11,17 +11,15 @@
 <div class="wrapper">
   <button routerLink="/result" class="button button3"></button>
   <!--<input type="input" name="textarea">-->
-  <textarea placeholder="Edit your text!">
-</textarea>
+  <textarea  id = "thetextarea" placeholder="Edit your text!"> {{localtext}}
+  </textarea>
   <!--<img src="https://i.imgur.com/YDajhhh.png" alt = "cute shibe" style="height: 250px;width: 250px; margin-top: 55px;">-->
-  <button routerLink="/result" class="button button2"></button>
+  <button routerLink="/result"  class="button button2"></button>
   <br>
   <br>
-
-
 
 </div>
-<button routerLink="/result" class="button">Reload</button>
+<button routerLink="/result" (click)="bfunction()" class="button">Reload</button>
 
 <br>
 <br>
