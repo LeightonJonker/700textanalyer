@@ -13,6 +13,30 @@ export class BodyComponent implements OnInit {
   private APIkey: string = "0109b289e8e411efba6806edf42383e3";
   private secret: string = "e418eb25616d04f4";
   private results: string;
+  searchterm: string = "dog";
+  searchextension: string = "?method=flickr.photos.search&api_key="
+  private imagesearchurl: string = this.baseurl+this.searchextension+this.APIkey+"&tags="+this.searchterm;
+
+  private flickrsearch(){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function processRequest(){
+      if (this.readyState == 4 && this.status == 200){
+        document.getElementById("demo").innerHTML = this.responseText;
+        this.results = this.responseText;
+        console.log(this.results)
+        if (window.DOMParser){
+          var parser = new DOMParser();
+          var xmlDoc= parser.parseFromString(this.results,  "text/xml");
+        }
+        var x = xmlDoc.getElementsByTagName('photos');
+       // var y = x.nodeValue; // y is the value of the tag 'method' in the xml file. different for search atm can't figure out why
+        console.log("huh " + x.item(0) + " uhu")
+      }
+    };
+    xhr.open('GET', this.imagesearchurl, true);
+    xhr.send();
+    console.log(this.imagesearchurl)
+  }
 
   // Create a url which is then sent through an https GET request. The return is then turned into an xml file and can be read.
   private flickrtest(){
@@ -36,7 +60,6 @@ export class BodyComponent implements OnInit {
     };
     xhr.open('GET', atest, true);
     xhr.send();
-
   }
 
 //   private getString(tag, element){
