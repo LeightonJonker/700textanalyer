@@ -12,6 +12,7 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ResultComponent } from './result/result.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ResultComponent } from './result/result.component';
     ResultComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
           RouterModule.forRoot([
             {
