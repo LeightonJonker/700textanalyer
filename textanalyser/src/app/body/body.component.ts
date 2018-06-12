@@ -8,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
   providers: []
 })
 export class BodyComponent implements OnInit {
-  imgsrc: string = "https://farm"
-  imgfarmid: string = ".staticflickr.com/"
-  final: string
+  imgsrc: string = "https://farm";
+  imgfarmid: string = ".staticflickr.com/";
+
+
+  Sid: string = localStorage.getItem("id");
+  Sowner: string = localStorage.getItem("owner");
+  Ssecret: string = localStorage.getItem("secret");
+  Sserver: string = localStorage.getItem("server");
+  Sfarm: string = localStorage.getItem("farm");
+  Stitle: string = localStorage.getItem("title");
+  Sispublic: string = localStorage.getItem("ispublic");
+  Sisfriend: string = localStorage.getItem("isfriend");
+  Sisfamily: string = localStorage.getItem("isfamily");
+
+  final: string = this.imgsrc + this.Sfarm + this.imgfarmid + this.Sserver + "/" + this.Sid + "_" + this.Ssecret + ".jpg";
 
   private role: string;
   private  baseurl: string = "https://api.flickr.com/services/rest/";
@@ -44,37 +56,31 @@ export class BodyComponent implements OnInit {
         var isfriend = x[0].getAttribute("isfriend");
         var isfamily = x[0].getAttribute("isfamily");
         // can successfully access saved xml file and get correct tags for image.
-
+        localStorage.setItem("id", id);
+        localStorage.setItem("owner", owner);
+        localStorage.setItem("secret", secret);
+        localStorage.setItem("server", server);
+        localStorage.setItem("farm", farm);
+        localStorage.setItem("title", title);
+        localStorage.setItem("ispublic", ispublic);
+        localStorage.setItem("isfriend", isfriend);
+        localStorage.setItem("isfamily", isfamily);
         console.log(title)
       }
     };
     xhr.open('GET', this.imagesearchurl, true);
     xhr.send();
-    console.log(this.imagesearchurl)
+    console.log(this.Sispublic)
+    console.log(this.final)
+
+    //console.log(this.imagesearchurl)
   }
 
-  // Create a url which is then sent through an https GET request. The return is then turned into an xml file and can be read.
-  private flickrtest(){
-   // var window
-    var results
-    var atest: string = this.baseurl+"?method=flickr.test.echo&api_key="+this.APIkey;
-    console.log (atest)
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function processRequest(){
-      if (this.readyState == 4 && this.status == 200){
-        document.getElementById("demo").innerHTML = this.responseText;
-        results = this.responseText;
-        console.log(results)
-          var parser = new DOMParser();
-          var xmlDoc= parser.parseFromString(results,  "text/xml");
-        var x = xmlDoc.getElementsByTagName('method')[0];
-        var y = x.childNodes[0]; // y is the value of the tag 'method' in the xml file.
-        console.log(y)
-      }
-    };
-    xhr.open('GET', atest, true);
-    xhr.send();
-  }
+private flickrurl(){
+    console.log(this.final)
+document.getElementById("thetextarea").style.backgroundImage='url('+ this.final + ')';
+    console.log("hi")
+}
 
 //   private getString(tag, element){
 //    var list: NodeList = element.getElementsByTagName(tag);
