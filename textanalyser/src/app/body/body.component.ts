@@ -11,18 +11,23 @@ export class BodyComponent implements OnInit {
   imgsrc: string = "https://farm";
   imgfarmid: string = ".staticflickr.com/";
 
+public storeurls() { // used to get the url components from storage, make the final url and store it.
+  for (var i = 0; i < 4; i++) {
+    var Sid: string = localStorage.getItem("id" + i);
+    var Sowner: string = localStorage.getItem("owner" + i);
+    var Ssecret: string = localStorage.getItem("secret" + i);
+    var Sserver: string = localStorage.getItem("server" + i);
+    var Sfarm: string = localStorage.getItem("farm" + i);
+    var Stitle: string = localStorage.getItem("title" + i);
+    var Sispublic: string = localStorage.getItem("ispublic" + i);
+    var Sisfriend: string = localStorage.getItem("isfriend" + i);
+    var Sisfamily: string = localStorage.getItem("isfamily" + i);
 
-  Sid: string = localStorage.getItem("id");
-  Sowner: string = localStorage.getItem("owner");
-  Ssecret: string = localStorage.getItem("secret");
-  Sserver: string = localStorage.getItem("server");
-  Sfarm: string = localStorage.getItem("farm");
-  Stitle: string = localStorage.getItem("title");
-  Sispublic: string = localStorage.getItem("ispublic");
-  Sisfriend: string = localStorage.getItem("isfriend");
-  Sisfamily: string = localStorage.getItem("isfamily");
-
-  final: string = this.imgsrc + this.Sfarm + this.imgfarmid + this.Sserver + "/" + this.Sid + "_" + this.Ssecret + ".jpg";
+    // gets url img for src
+    var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + ".jpg";
+    localStorage.setItem("final" + i, final); // store final url in local storage.
+  }
+}
 
   private role: string;
   private  baseurl: string = "https://api.flickr.com/services/rest/";
@@ -46,52 +51,44 @@ export class BodyComponent implements OnInit {
           var xmlDoc= parser.parseFromString(results,  "text/xml");
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
 
-        var id = x[0].getAttribute("id");
-        var owner = x[0].getAttribute("owner");
-        var secret = x[0].getAttribute("secret");
-        var server = x[0].getAttribute("server");
-        var farm = x[0].getAttribute("farm");
-        var title = x[0].getAttribute("title");
-        var ispublic = x[0].getAttribute("ispublic");
-        var isfriend = x[0].getAttribute("isfriend");
-        var isfamily = x[0].getAttribute("isfamily");
-        // can successfully access saved xml file and get correct tags for image.
-        localStorage.setItem("id", id);
-        localStorage.setItem("owner", owner);
-        localStorage.setItem("secret", secret);
-        localStorage.setItem("server", server);
-        localStorage.setItem("farm", farm);
-        localStorage.setItem("title", title);
-        localStorage.setItem("ispublic", ispublic);
-        localStorage.setItem("isfriend", isfriend);
-        localStorage.setItem("isfamily", isfamily);
-        console.log(title)
+
+        for (var i = 0; i < 4 ; i++) {
+          var id = x[i].getAttribute("id");
+          var owner = x[i].getAttribute("owner");
+          var secret = x[i].getAttribute("secret");
+          var server = x[i].getAttribute("server");
+          var farm = x[i].getAttribute("farm");
+          var title = x[i].getAttribute("title");
+          var ispublic = x[i].getAttribute("ispublic");
+          var isfriend = x[i].getAttribute("isfriend");
+          var isfamily = x[i].getAttribute("isfamily");
+          // can successfully access saved xml file and get correct tags for image.
+          localStorage.setItem("id" + i, id);
+          localStorage.setItem("owner" + i, owner);
+          localStorage.setItem("secret" + i, secret);
+          localStorage.setItem("server" + i, server);
+          localStorage.setItem("farm" + i, farm);
+          localStorage.setItem("title" + i, title);
+          localStorage.setItem("ispublic" + i, ispublic);
+          localStorage.setItem("isfriend" + i, isfriend);
+          localStorage.setItem("isfamily" + i, isfamily);
+          console.log(title)
+        }
       }
     };
     xhr.open('GET', this.imagesearchurl, true);
     xhr.send();
-    console.log(this.Sispublic)
-    console.log(this.final)
-
-    //console.log(this.imagesearchurl)
+    this.storeurls();
   }
 
-private flickrurl(){
-    console.log(this.final)
-document.getElementById("thetextarea").style.backgroundImage='url('+ this.final + ')';
+private flickrurl() {
+  for (var i = 0; i < 4; i++) {
+    var final = localStorage.getItem("final" + i);
+    console.log(final)
+  }
+document.getElementById("thetextarea").style.backgroundImage='url('+ final + ')';
     console.log("hi")
 }
-
-//   private getString(tag, element){
-//    var list: NodeList = element.getElementsByTagName(tag);
-//    if (list != null && list.getlength() > 0){
-//      var sublist: NodeList = list.item(0).getChildNodes();
-//      if (sublist != null && sublist.getLength() > 0) {
-//        return sublist.item(0).getNodeValue();
-//      }
-//    }
-//     return null;
-// }
 
   private afunction(){
     this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value;
