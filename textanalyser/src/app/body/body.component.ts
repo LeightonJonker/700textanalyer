@@ -24,7 +24,7 @@ public storeurls() { // used to get the url components from storage, make the fi
     var Sisfamily: string = localStorage.getItem("isfamily" + i);
 
     // gets url img for src
-    var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + ".jpg";
+    var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_z.jpg";
     localStorage.setItem("final" + i, final); // store final url in local storage.
   }
 }
@@ -82,12 +82,22 @@ public storeurls() { // used to get the url components from storage, make the fi
   }
 
 private flickrurl() {
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 3; i++) {
     var final = localStorage.getItem("final" + i);
     console.log(final)
   }
 document.getElementById("thetextarea").style.backgroundImage='url('+ final + ')';
-    console.log("hi")
+
+  var img = new Image();
+  img.src = final
+  var height1 = img.height;
+  var width1 = img.width;
+    img.onload = function(){
+    document.getElementById("thetextarea").style.height=height1+"px"; // change height of textarea (do before page loads)
+    document.getElementById("thetextarea").style.width=width1+"px"; // change width of textarea (do before page loads)
+    console.log(height1)
+    };
+
 }
 
   private afunction(){
