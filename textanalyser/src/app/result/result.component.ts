@@ -38,8 +38,6 @@ export class ResultComponent implements OnInit {
   //
   // }
 
-
-
   public changeoptionsizes(){
   console.log("heh")
      for (var i = 0; i < 4; i++) {
@@ -137,7 +135,9 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.changeoptionsizes();
+    this.changeoptionsizes();
+    this.changeoptionsizes();
   }
 
 }
