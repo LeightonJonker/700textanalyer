@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   //selector: 'app-result',
   templateUrl: './result.component.html',
@@ -31,16 +30,9 @@ export class ResultComponent implements OnInit {
   //   }
   // }
 
-
-  // public spamload(){
-  //   console.log("actuallyran this")
-  //   function changeoptionsizes();
-  //
-  // }
-
   public changeoptionsizes(){
   console.log("heh")
-     for (var i = 0; i < 4; i++) {
+     for (var i = 0; i <= 4; i++) {
        var Sid: string = localStorage.getItem("id" + i);
        var Sowner: string = localStorage.getItem("owner" + i);
        var Ssecret: string = localStorage.getItem("secret" + i);
@@ -53,16 +45,16 @@ export class ResultComponent implements OnInit {
 
        // gets url img for src
        var final: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_m.jpg";
-      // document.getElementById("option"+i).style.backgroundImage='url('+ final + ')';
+       var finalmed: string = this.imgsrc + Sfarm + this.imgfarmid + Sserver + "/" + Sid + "_" + Ssecret + "_n.jpg";
+
+       // document.getElementById("option"+i).style.backgroundImage='url('+ final + ')';
        localStorage.setItem("final" + i, final); // store final url in local storage.
-
+       localStorage.setItem("finalmed" + i, finalmed);
      }
-
 
 /////////////////////////////////////////////////////////////// option 0
 
-
-       var final = localStorage.getItem("final0");
+       var final = localStorage.getItem("finalmed0");
        var img = new Image();
        img.src = final;
        var height = img.height;
@@ -73,9 +65,7 @@ export class ResultComponent implements OnInit {
        };
     document.getElementById("option0").style.backgroundImage='url('+ final + ')';
 
-
 /////////////////////////////////////////////////////////////// option 1
-
 
     var final1 = localStorage.getItem("final1");
     var img1 = new Image();
@@ -88,9 +78,7 @@ export class ResultComponent implements OnInit {
     };
     document.getElementById("option1").style.backgroundImage='url('+ final1 + ')';
 
-
 /////////////////////////////////////////////////////////////// option 2
-
 
     var final2 = localStorage.getItem("final2");
     var img2 = new Image();
@@ -103,9 +91,7 @@ export class ResultComponent implements OnInit {
     };
     document.getElementById("option2").style.backgroundImage='url('+ final2 + ')';
 
-
 ///////////////////////////////////////////////////////////////
-
 
     var final3 = localStorage.getItem("final3");
     var img3 = new Image();
@@ -118,25 +104,77 @@ export class ResultComponent implements OnInit {
     };
     document.getElementById("option3").style.backgroundImage='url('+ final3 + ')';
 
+    /////////////////////////////////////////////////////////////
+
+    var final4 = localStorage.getItem("final4");
+    var img4 = new Image();
+    img4.src = final4;
+    var height4 = img4.height;
+    var width4 = img4.width;
+    img4.onload = function () {
+      document.getElementById("option4").style.height = height4 + "px"; // change height of textarea (do before page loads)
+      document.getElementById("option4").style.width = width4 + "px"; // change width of textarea (do before page loads)
+    };
+    document.getElementById("option4").style.backgroundImage='url('+ final4 + ')';
+  }
+
+  public option1to0(){// selected photo 1, swapping with photo 0
+    console.log("ye clicked me!")
+    // get medium size photo for option 1
+    var medopt1 = localStorage.getItem("finalmed1")
+
+    // get small size photo for option 0
+    var smalopt0 = localStorage.getItem("final0")
+
   }
 
 
+  public option2to0(){ // selected photo 2, swapping with photo 0
+    // get medium size photo for option 2
+    var medopt2 = localStorage.getItem("finalmed2")
+
+    // get small size photo for option
+    var smalopt0 = localStorage.getItem("final0")
+
+  }
+
+
+  public option3to0(){// selected photo 3, swapping with photo 0
+    // get medium size photo for option 3
+    var medopt3 = localStorage.getItem("finalmed3")
+
+    // get small size photo for option 0
+    var smalopt0 = localStorage.getItem("final0")
+
+  }
+
+
+  public option4to0(){ // selected photo 4, swapping with photo 0
+    // get medium size photo for option 4
+    var medopt4 = localStorage.getItem("finalmed4")
+
+    // get small size photo for option 0
+    var smalopt0 = localStorage.getItem("final0")
+
+  }
+
   private bfunction() {
-    this.role = (<HTMLInputElement>document.getElementById("thetextarea")).value;
+    this.role = (<HTMLInputElement>document.getElementById("option0")).value;
     localStorage.setItem('inputtext',this.role );
     console.log(this.role)
    // document.getElementById("thetextarea").style.width = "500px";
    // document.getElementById("thetextarea").style.height = "500px";
   }
 
-
   constructor() {
 
   }
 
   ngOnInit() {
-    this.changeoptionsizes();
-    this.changeoptionsizes();
+    console.log("running page")
+    for (var i = 0; i< 5; i++) {
+      this.changeoptionsizes();
+    }
     this.changeoptionsizes();
   }
 

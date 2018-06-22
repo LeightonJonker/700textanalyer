@@ -12,7 +12,7 @@ export class BodyComponent implements OnInit {
   imgfarmid: string = ".staticflickr.com/";
 
 public storeurls() { // used to get the url components from storage, make the final url and store it.
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i <= 4; i++) {
     var Sid: string = localStorage.getItem("id" + i);
     var Sowner: string = localStorage.getItem("owner" + i);
     var Ssecret: string = localStorage.getItem("secret" + i);
@@ -52,7 +52,7 @@ public storeurls() { // used to get the url components from storage, make the fi
         var x = xmlDoc.documentElement.getElementsByTagName("photo");
 
 
-        for (var i = 0; i < 4 ; i++) {
+        for (var i = 0; i <= 4 ; i++) {
           var id = x[i].getAttribute("id");
           var owner = x[i].getAttribute("owner");
           var secret = x[i].getAttribute("secret");

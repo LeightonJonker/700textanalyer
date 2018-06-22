@@ -4,7 +4,8 @@ body{
 
 
 h1 {
-  font-family: Roboto;
+  font-family: "Bookman Old Style";
+  font-style: italic;
   text-align: center;
   font-size: 30px;
   line-height: 1px;
@@ -130,6 +131,7 @@ input{
 }
 textarea{
   placeholder: "hi";
+  float: left;
   resize: none;
   margin-left: 5%;
   margin-top:  80px;
@@ -145,14 +147,16 @@ textarea{
 .left{
   float: left;
   margin-left: 120px;
-  /*width: 195px;*/
-  /*height: 322px;*/
+  margin-right: 140px;
+  width: 195px;
+  height: 322px;
 }
 
 .right{
   float: right;
   margin-left: 120px;
-  /*width: 195px;*/
-  /*height: 322px;*/
+  margin-right: 140px;
+  width: 195px;
+  height: 322px;
 
 }
